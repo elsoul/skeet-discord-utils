@@ -7,5 +7,15 @@ export { getUserRoles } from './lib/getUserRoles'
 export { deferResponse } from './lib/deferResponse'
 export { updateResponse } from './lib/updateResponse'
 export { removeUserRole } from './lib/removeUserRole'
-
-export type { Message, TextChannel, TextChannelType } from 'discord.js'
+export { addRoleToUser } from './lib/addRoleToUser'
+export type {
+  Message,
+  TextChannel,
+  TextChannelType,
+  MessageComponentType,
+  ButtonStyle,
+  InteractionType,
+  InteractionResponseType,
+  Interaction,
+  MessageComponentInteraction,
+} from 'discord.js'
