@@ -13,11 +13,13 @@ export type {
   TextChannel,
   TextChannelType,
   MessageComponentType,
+  Interaction,
+  MessageComponentInteraction,
+} from 'discord.js'
+export {
   ComponentType,
   TextInputStyle,
   ButtonStyle,
-  InteractionType,
   InteractionResponseType,
-  Interaction,
-  MessageComponentInteraction,
+  InteractionType,
 } from 'discord.js'
