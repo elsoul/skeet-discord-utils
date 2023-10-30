@@ -13,6 +13,8 @@ export type {
   TextChannel,
   TextChannelType,
   MessageComponentType,
+  ComponentType,
+  TextInputStyle,
   ButtonStyle,
   InteractionType,
   InteractionResponseType,
