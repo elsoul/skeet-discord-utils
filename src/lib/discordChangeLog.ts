@@ -8,7 +8,10 @@ export const discordChangeLog = async (
     const log = execSync(`gh release view --repo ${repoName}`).toString()
     const token = process.env.DISCORD_TOKEN || ''
     const channelId = process.env.DISCORD_CHANGELOG_CHANNEL_ID || ''
-    await messageChannel(token, channelId, log)
+    const message = {
+      content: log,
+    }
+    await messageChannel(token, channelId, message)
     return log
   } catch (error) {
     console.log(`Error in getChangeLog: ${error}`)
@@ -16,5 +19,9 @@ export const discordChangeLog = async (
   }
 }
 
-const res = discordChangeLog()
-console.log(res)
+const run = async () => {
+  const res = await discordChangeLog()
+  console.log(res)
+}
+
+run()
