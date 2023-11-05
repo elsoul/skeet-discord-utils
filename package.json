@@ -31,7 +31,8 @@
     "version:update": "ts-node -r tsconfig-paths/register --transpile-only release.ts",
     "build-doc": "typedoc src/index.ts --out docs",
     "publish": "npm publish",
-    "dev": "npx ts-node -r tsconfig-paths/register --transpile-only src/index.ts"
+    "dev": "npx ts-node -r tsconfig-paths/register --transpile-only src/index.ts",
+    "getLog": "npx ts-node -r tsconfig-paths/register --transpile-only src/lib/getChangeLog.ts"
   },
   "dependencies": {
     "discord-interactions": "3.4.0",
