@@ -25,3 +25,7 @@ jobs:
       - run: yarn test
       - name: Disord Notification
         run: yarn getLog
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          DISCORD_CHANGELOG_CHANNEL_ID: ${{ secrets.DISCORD_CHANGELOG_CHANNEL_ID }}
