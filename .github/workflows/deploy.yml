@@ -1,10 +1,8 @@
 name: SkeetFrameworkDiscordUtils
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  release:
+    types: [created]
 
 jobs:
   build:
@@ -24,8 +22,9 @@ jobs:
       - run: yarn install
       - run: yarn test
       - name: Disord Notification
-        run: yarn getLog
+        run: yarn discord
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
           DISCORD_CHANGELOG_CHANNEL_ID: ${{ secrets.DISCORD_CHANGELOG_CHANNEL_ID }}
+          DISCORD_CHANNEL_ID_JA: ${{ secrets.DISCORD_CHANNEL_ID_JA }}

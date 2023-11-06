@@ -2,26 +2,68 @@ import { execSync } from 'child_process'
 import { messageChannel } from './messageChannel'
 
 export const discordChangeLog = async (
-  repoName = 'elsoul/skeet-discord-utils',
+  discordToken: string,
+  repoName: string,
+  channelIds: string[],
+  lang = '',
 ) => {
   try {
-    const log = execSync(`gh release view --repo ${repoName}`).toString()
-    const token = process.env.DISCORD_TOKEN || ''
-    const channelId = process.env.DISCORD_CHANGELOG_CHANNEL_ID || ''
-    const message = {
-      content: log,
+    const log = getReleaseInfoAsJson(repoName)
+    const repo = repoName.split('/')[1]
+    const headLine = lang === 'ja' ? 'をリリースしました' : 'Released'
+    const content = `## ${repo} ${log.tag} ${headLine} 🎉
+    
+${log.whatsChanged}
+`
+    for (const channelId of channelIds) {
+      const message = {
+        content,
+      }
+      await messageChannel(discordToken, channelId, message)
+      // sleep for 0.3 second to avoid rate limiting
+      await new Promise((resolve) => setTimeout(resolve, 300))
     }
-    await messageChannel(token, channelId, message)
-    return log
+    return content
   } catch (error) {
     console.log(`Error in getChangeLog: ${error}`)
     return ''
   }
 }
 
-const run = async () => {
-  const res = await discordChangeLog()
-  console.log(res)
+export type ReleaseInfo = {
+  tag: string
+  draft: boolean
+  prerelease: boolean
+  author: string
+  created: string
+  published: string
+  url: string
+  whatsChanged: string
 }
 
-run()
+export function getReleaseInfoAsJson(repoName: string): ReleaseInfo {
+  const log = execSync(`gh release view --repo ${repoName}`).toString()
+  const header = log.split('--')[0].trim()
+  const headerLines = header.split('\n').map((line) => line.trim())
+
+  const jsonOutput: { [key: string]: string | boolean } = {}
+
+  let currentKey = ''
+  headerLines.forEach((line) => {
+    if (line.includes(':')) {
+      const [key, value] = line.split(':').map((item) => item.trim())
+      currentKey = key
+      if (value) {
+        if (value === 'true' || value === 'false') {
+          jsonOutput[key] = value === 'true'
+        } else {
+          jsonOutput[key] = value
+        }
+      }
+    } else if (currentKey) {
+      jsonOutput[currentKey] += line
+    }
+  })
+  jsonOutput.whatsChanged = log.split('--')[1].trim()
+  return jsonOutput as ReleaseInfo
+}

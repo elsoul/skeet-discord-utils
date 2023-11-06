@@ -8,6 +8,9 @@ export { deferResponse } from './lib/deferResponse'
 export { updateResponse } from './lib/updateResponse'
 export { removeUserRole } from './lib/removeUserRole'
 export { addRoleToUser } from './lib/addRoleToUser'
+export { discordChangeLog } from './lib/discordChangeLog'
+export { getReleaseInfoAsJson } from './lib/discordChangeLog'
+export type { ReleaseInfo } from './lib/discordChangeLog'
 export type {
   Message,
   TextChannel,
