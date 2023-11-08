@@ -1,6 +1,8 @@
 import { execSync } from 'child_process'
 import { messageChannel } from './messageChannel'
 
+const DISCORD_BODY_LIMIT = 4000
+
 export const discordChangeLog = async (
   discordToken: string,
   repoName: string,
@@ -11,10 +13,12 @@ export const discordChangeLog = async (
     const log = getReleaseInfoAsJson(repoName)
     const repo = repoName.split('/')[1]
     const headLine = lang === 'ja' ? 'をリリースしました' : 'Released'
-    const content = `## ${repo} ${log.tag} ${headLine} 🎉
+    let content = `## ${repo} ${log.tag} ${headLine} 🎉
     
 ${log.whatsChanged}
 `
+    content = trimContent(content)
+
     for (const channelId of channelIds) {
       const message = {
         content,
@@ -28,6 +32,17 @@ ${log.whatsChanged}
     console.log(`Error in getChangeLog: ${error}`)
     return ''
   }
+}
+
+function trimContent(content: string): string {
+  if (content.length > DISCORD_BODY_LIMIT) {
+    let lines = content.split('\n')
+    while (lines.join('\n').length > DISCORD_BODY_LIMIT) {
+      lines.pop()
+    }
+    return lines.join('\n')
+  }
+  return content
 }
 
 export type ReleaseInfo = {

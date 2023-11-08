@@ -1,26 +1,27 @@
 import dotenv from 'dotenv'
-import { discordChangeLog } from './lib/discordChangeLog'
+import { discordChangeLog } from '@skeet-framework/discord-utils'
 dotenv.config()
 
-const REPO_NAME = 'elsoul/skeet-discord-utils'
+type ProjectType = 'labo' | 'epics'
 
-const run = async (project: 'labo' | 'epics') => {
+const run = async (project: ProjectType, repoName: string) => {
   if (project === 'labo') {
     console.log('labo')
     const token = process.env.DISCORD_TOKEN_LABO || ''
     const channelId = process.env.LABO_SKEET_CHANNEL_ID || ''
-    await discordChangeLog(token, REPO_NAME, [channelId])
+    await discordChangeLog(token, repoName, [channelId])
   } else if (project === 'epics') {
     console.log('epics')
     const token = process.env.DISCORD_TOKEN || ''
     const channelId = process.env.DISCORD_CHANNEL_ID || ''
     const channelIdJA = process.env.DISCORD_CHANNEL_ID_JA || ''
-    await discordChangeLog(token, REPO_NAME, [channelId])
-    await discordChangeLog(token, REPO_NAME, [channelIdJA], 'ja')
+    await discordChangeLog(token, repoName, [channelId])
+    await discordChangeLog(token, repoName, [channelIdJA], 'ja')
   } else {
     console.log('invalid project name')
   }
 }
 
-const project = process.argv[2] as 'labo' | 'epics'
-run(project)
+const project = process.argv[2] as ProjectType
+const repoArg = process.argv[3] || ''
+void run(project, repoArg)

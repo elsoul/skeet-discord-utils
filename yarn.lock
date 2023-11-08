@@ -986,6 +986,14 @@
   dependencies:
     "@sinonjs/commons" "^3.0.0"
 
+"@skeet-framework/discord-utils@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@skeet-framework/discord-utils/-/discord-utils-0.2.2.tgz#866e46fa093ecb4ae5efcb925cb429afd1d3fbf8"
+  integrity sha512-kN6xmJ7IdS7kAZY3zhUX9+iyjtvwsNaqmzFe0GBtl8RhsuoWav8tzDMknIvizd93LwJkC+/0qt1IaU5o5C8g+A==
+  dependencies:
+    discord-interactions "3.4.0"
+    discord.js "14.13.0"
+
 "@szmarczak/http-timer@^5.0.1":
   version "5.0.1"
   resolved "https://registry.npmjs.org/@szmarczak/http-timer/-/http-timer-5.0.1.tgz"
@@ -1815,7 +1823,7 @@ dot-prop@^6.0.1:
   dependencies:
     is-obj "^2.0.0"
 
-dotenv@^16.3.1:
+dotenv@16.3.1:
   version "16.3.1"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-16.3.1.tgz#369034de7d7e5b120972693352a3bf112172cc3e"
   integrity sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==
