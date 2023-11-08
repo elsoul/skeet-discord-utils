@@ -10,7 +10,9 @@ export { removeUserRole } from './lib/removeUserRole'
 export { addRoleToUser } from './lib/addRoleToUser'
 export { discordChangeLog } from './lib/discordChangeLog'
 export { getReleaseInfoAsJson } from './lib/discordChangeLog'
+export { getGuildMembers } from './lib/getGuildMembers'
 export type { ReleaseInfo } from './lib/discordChangeLog'
+export type { DiscordUser, GuildMember } from './types/DiscordUser'
 export type {
   Message,
   TextChannel,
