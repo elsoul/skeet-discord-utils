@@ -22,6 +22,7 @@ export type {
   Guild,
   Member,
   User,
+  ActionData,
 } from './types/discordRouterParams'
 export type {
   Message,
