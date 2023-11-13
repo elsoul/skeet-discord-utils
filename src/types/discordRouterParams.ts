@@ -1,3 +1,22 @@
+export type DiscordRouterParams = {
+  app_permissions: string
+  application_id: string
+  channel: Channel
+  channel_id: string
+  data: CommandData | ActionData
+  entitlement_sku_ids: string[]
+  entitlements: any[]
+  guild: Guild
+  guild_id: string
+  guild_locale: string
+  id: string
+  locale: string
+  member: Member
+  token: string
+  type: number
+  version: number
+}
+
 export type Channel = {
   flags: number
   guild_id: string
@@ -21,6 +40,8 @@ export type CommandData = {
   type: number
 }
 
+export type ActionData = { component_type: number; custom_id: string }
+
 export type CommandOption = {
   name: string
   value: string
@@ -32,23 +53,35 @@ export type Guild = {
   locale: string
 }
 
-export type InteractionParams = {
-  app_permissions: string
-  application_id: string
-  channel: Channel
-  channel_id: string
-  data: CommandData
-  entitlement_sku_ids: string[]
-  entitlements: any[] // Replace 'any' with more specific export type if entitlements structure is known
-  guild: Guild
-  guild_id: string
-  guild_locale: string
+export type Author = {
+  avatar: string
+  avatar_decoration_data: any | null
+  bot: boolean
+  discriminator: string
+  global_name: string | null
   id: string
-  locale: string
-  member: Member
-  token: string
+  premium_type: number
+  public_flags: number
+  username: string
+}
+
+export type Message = {
+  attachments: any[]
+  author: Author
+  channel_id: string
+  components: any[]
+  content: string
+  edited_timestamp: string | null
+  embeds: any[]
+  flags: number
+  id: string
+  mention_everyone: boolean
+  mention_roles: string[]
+  mentions: any[]
+  pinned: boolean
+  timestamp: string
+  tts: boolean
   type: number
-  version: number
 }
 
 export type Member = {

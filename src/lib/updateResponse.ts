@@ -42,7 +42,6 @@ export async function updateResponse(
   try {
     const rest = new REST({ version: '10' }).setToken(token)
     const route = Routes.webhookMessage(applicationId, interactionToken)
-    console.log({ route })
     await rest.patch(route, {
       headers: {
         'Content-Type': 'application/json',
@@ -52,8 +51,6 @@ export async function updateResponse(
         ...data,
       },
     })
-
-    console.log('Response updated.')
     return true
   } catch (error) {
     console.log(`updateResponse: ${error}`)
