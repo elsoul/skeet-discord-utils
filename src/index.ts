@@ -30,4 +30,9 @@ export {
   ButtonStyleTypes,
   MessageComponentTypes,
 } from 'discord-interactions'
-export { ComponentType, TextInputStyle, ButtonStyle } from 'discord.js'
+export {
+  ComponentType,
+  TextInputStyle,
+  ButtonStyle,
+  SlashCommandBuilder,
+} from 'discord.js'
