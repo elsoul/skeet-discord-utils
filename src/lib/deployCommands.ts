@@ -41,7 +41,7 @@ export async function deployCommands(
   token: string,
   discordClientId: string,
   guildId: string,
-  commands: SlashCommandBuilder[],
+  commands: Omit<SlashCommandBuilder, 'addSubcommand' | 'addSubcommandGroup'>,
 ): Promise<void> {
   try {
     console.log('Started refreshing application (/) commands.')
