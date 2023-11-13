@@ -35,4 +35,4 @@ import { SlashCommandBuilder } from 'discord.js';
  *   .catch((error) => console.error(error));
  * ```
  */
-export declare function deployCommands(token: string, discordClientId: string, guildId: string, commands: Omit<SlashCommandBuilder, 'addSubcommand' | 'addSubcommandGroup'>): Promise<void>;
+export declare function deployCommands(token: string, discordClientId: string, guildId: string, commands: Omit<SlashCommandBuilder, 'addSubcommand' | 'addSubcommandGroup'>[]): Promise<void>;
