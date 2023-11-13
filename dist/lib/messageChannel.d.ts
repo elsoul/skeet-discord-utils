@@ -1,6 +1,5 @@
 import { Message } from 'discord.js';
 /**
- * @module messageChannel
  * Sends a message to a specified channel in Discord.
  *
  * @param token - The token used for authentication with the Discord API.

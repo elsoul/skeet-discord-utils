@@ -1,5 +1,4 @@
 /**
- * @module addRoleToUser
  * Adds a specified role to a user within a specific guild.
  *
  * @param guildId - The ID of the guild where the user and role are located.
@@ -9,6 +8,7 @@
  * @throws Will throw an error if there is a problem adding the role.
  *
  * @example
+ * ```typescript
  * const token = 'your_discord_token_here';
  * const guildId = 'your_guild_id_here';
  * const userId = 'your_user_id_here';
@@ -24,5 +24,6 @@
  * }
  *
  * run();
+ * ```
  */
 export declare function addRoleToUser(token: string, guildId: string, userId: string, roleId: string): Promise<void>;

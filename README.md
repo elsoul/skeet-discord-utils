@@ -42,6 +42,31 @@ with Skeet Framework CLI
 $ skeet yarn add -p @skeet-framework/discord-utils
 ```
 
+## Usage
+
+```ts
+const token = 'your_discord_token_here'
+const channelId = 'your_channel_id_here'
+const body = {
+  content: 'Hello, world!',
+}
+
+const run = async () => {
+  try {
+    const message = await messageChannel(token, channelId, body)
+    console.log(`Message sent with ID: ${message.id}`)
+  } catch (error) {
+    console.error(`Error: ${error.message}`)
+  }
+}
+
+run()
+```
+
+more examples can be found in typedoc;
+
+- [https://elsoul.github.io/skeet-discord-utils/](https://elsoul.github.io/skeet-discord-utils/)
+
 ## Skeet Framework Document
 
 - [https://skeet.dev](https://skeet.dev)

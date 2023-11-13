@@ -11,6 +11,7 @@ export { addRoleToUser } from './lib/addRoleToUser'
 export { discordChangeLog } from './lib/discordChangeLog'
 export { getReleaseInfoAsJson } from './lib/discordChangeLog'
 export { getGuildMembers } from './lib/getGuildMembers'
+export { deployCommands } from './lib/deployCommands'
 export type { ReleaseInfo } from './lib/discordChangeLog'
 export type { DiscordUser, GuildMember } from './types/DiscordUser'
 export type {
@@ -20,6 +21,7 @@ export type {
   MessageComponentType,
   Interaction,
   MessageComponentInteraction,
+  ApplicationCommandData,
 } from 'discord.js'
 export {
   InteractionResponseType,

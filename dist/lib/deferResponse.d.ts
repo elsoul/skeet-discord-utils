@@ -1,5 +1,4 @@
 /**
- * @module deferResponse
  * Defers the response to a Discord interaction, indicating that a future response will be sent.
  *
  * @param token - The token used for authentication with the Discord API.
@@ -10,6 +9,7 @@
  * @throws Will throw an error if there is a problem deferring the response.
  *
  * @example
+ * ```typescript
  * const token = 'your_discord_token_here';
  * const interactionId = 'your_interaction_id_here';
  * const interactionToken = 'your_interaction_token_here';
@@ -24,5 +24,6 @@
  *     }
  *   })
  *   .catch(error => console.error(`Error: ${error.message}`));
+ * ```
  */
 export declare function deferResponse(token: string, interactionId: string, interactionToken: string, content?: string): Promise<boolean>;
