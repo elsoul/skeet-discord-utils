@@ -49,8 +49,6 @@ export async function deferResponse(
         },
       },
     })
-
-    console.log('Response deferred.')
     return true
   } catch (error) {
     console.log(`deferResponse: ${error}`)
