@@ -1,7 +1,6 @@
 import { REST, Routes } from 'discord.js'
 
 /**
- * @module getUserRoles
  * Retrieves the roles of a user in a specific guild.
  *
  * @param token - The token used for authentication with the Discord API.

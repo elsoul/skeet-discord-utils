@@ -1,7 +1,6 @@
 import { REST, Routes } from 'discord.js'
 
 /**
- * @module updateResponse
  * Updates a previous response to a Discord interaction.
  *
  * @param token - The token used for authentication with the Discord API.

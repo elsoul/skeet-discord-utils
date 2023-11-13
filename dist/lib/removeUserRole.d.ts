@@ -1,5 +1,4 @@
 /**
- * @module removeUserRole
  * Removes a role from a user within a specific guild.
  *
  * @param token - The token used for authentication with the Discord API.

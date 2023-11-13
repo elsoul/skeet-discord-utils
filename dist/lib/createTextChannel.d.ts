@@ -1,6 +1,5 @@
 import { TextChannel } from 'discord.js';
 /**
- * @module createTextChannel
  * Creates a text channel within a guild with specified permissions.
  *
  * @param token - The token used for authentication with the Discord API.
@@ -11,6 +10,7 @@ import { TextChannel } from 'discord.js';
  * @throws Will throw an error if there is a problem creating the channel.
  *
  * @example
+ * ```typescript
  * const token = 'your_discord_token_here';
  * const guildId = 'your_guild_id_here';
  * const channelName = 'text-channel';
@@ -18,5 +18,6 @@ import { TextChannel } from 'discord.js';
  *
  * const channel = await createTextChannel(token, guildId, channelName, memberId)
  * console.log(`Channel created with ID: ${channel.id}`)
+ * ```
  */
 export declare function createTextChannel(token: string, guildId: string, channelName: string, memberId: string): Promise<TextChannel>;

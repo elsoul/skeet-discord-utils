@@ -1,5 +1,4 @@
 /**
- * @module createPrivateChannel
  * Creates a private channel within a guild if a channel with the specified name does not already exist.
  *
  * @param token - The token used for authentication with the Discord API.
@@ -10,6 +9,7 @@
  * @throws Will throw an error if there is a problem creating the channel.
  *
  * @example
+ * ```typescript
  * const token = 'your_discord_token_here';
  * const guildId = 'your_guild_id_here';
  * const channelName = 'private-channel';
@@ -22,5 +22,6 @@
  * } else {
  *   console.log('Channel already exists.');
  * }
+ * ```
  */
 export declare const createPrivateChannel: (token: string, guildId: string, channelName: string, memberId: string) => Promise<import("discord.js").TextChannel | null>;

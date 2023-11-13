@@ -1,7 +1,6 @@
 import { REST, Routes, TextChannel } from 'discord.js'
 
 /**
- * @module isChannelExist
  * Checks if a channel with a specified name exists within a guild.
  *
  * @param token - The token used for authentication with the Discord API.

@@ -1,7 +1,6 @@
 import { REST, Routes } from 'discord.js'
 
 /**
- * @module addRoleToUser
  * Adds a specified role to a user within a specific guild.
  *
  * @param guildId - The ID of the guild where the user and role are located.
@@ -11,6 +10,7 @@ import { REST, Routes } from 'discord.js'
  * @throws Will throw an error if there is a problem adding the role.
  *
  * @example
+ * ```typescript
  * const token = 'your_discord_token_here';
  * const guildId = 'your_guild_id_here';
  * const userId = 'your_user_id_here';
@@ -26,6 +26,7 @@ import { REST, Routes } from 'discord.js'
  * }
  *
  * run();
+ * ```
  */
 export async function addRoleToUser(
   token: string,
