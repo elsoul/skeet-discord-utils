@@ -16,4 +16,4 @@ export type { ReleaseInfo } from './lib/discordChangeLog';
 export type { DiscordUser, GuildMember } from './types/DiscordUser';
 export type { Message, TextChannel, TextChannelType, MessageComponentType, Interaction, MessageComponentInteraction, ApplicationCommandData, } from 'discord.js';
 export { InteractionResponseType, InteractionType, verifyKey, ButtonStyleTypes, MessageComponentTypes, } from 'discord-interactions';
-export { ComponentType, TextInputStyle, ButtonStyle } from 'discord.js';
+export { ComponentType, TextInputStyle, ButtonStyle, SlashCommandBuilder, } from 'discord.js';
