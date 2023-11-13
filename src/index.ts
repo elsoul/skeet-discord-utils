@@ -25,5 +25,7 @@ export {
   InteractionResponseType,
   InteractionType,
   verifyKey,
+  ButtonStyleTypes,
+  MessageComponentTypes,
 } from 'discord-interactions'
 export { ComponentType, TextInputStyle, ButtonStyle } from 'discord.js'
