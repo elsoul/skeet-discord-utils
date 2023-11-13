@@ -1,6 +1,6 @@
 {
   "name": "@skeet-framework/discord-utils",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "Skeet Framework Plugin - Discord Utils",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
