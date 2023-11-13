@@ -15,6 +15,15 @@ export { deployCommands } from './lib/deployCommands'
 export type { ReleaseInfo } from './lib/discordChangeLog'
 export type { DiscordUser, GuildMember } from './types/DiscordUser'
 export type {
+  InteractionParams,
+  Channel,
+  CommandData,
+  CommandOption,
+  Guild,
+  Member,
+  User,
+} from './types/InteractionParams'
+export type {
   Message,
   TextChannel,
   TextChannelType,
