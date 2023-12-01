@@ -12,6 +12,7 @@ export { discordChangeLog } from './lib/discordChangeLog'
 export { getReleaseInfoAsJson } from './lib/discordChangeLog'
 export { getGuildMembers } from './lib/getGuildMembers'
 export { deployCommands } from './lib/deployCommands'
+export { interactionMessage } from './lib/interactionMessage'
 export type { ReleaseInfo } from './lib/discordChangeLog'
 export type { DiscordUser, GuildMember } from './types/DiscordUser'
 export type {
